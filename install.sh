@@ -45,4 +45,9 @@ if [[ $(command -v azbrowse > /dev/null; echo $?) == 1 ]]; then
     rm azbrowse_linux_amd64.tar.gz
 fi
 
+if [[ $(command -v grr > /dev/null; echo $?) == 1 ]]; then
+    echo "Installing thefuck"
+    pip install thefuck
+fi
+
 echo "Done"
