@@ -49,6 +49,10 @@ if [[ $(command -v thefuck > /dev/null; echo $?) == 0 ]]; then
     eval $(thefuck --alias grr)
 fi
 
+if [[ $(command -v terraform > /dev/null; echo $?) == 0 ]]; then
+    eval $(terraform --alias tf)
+fi
+
 if [[ $(command -v gh > /dev/null; echo $?) == 0 ]]; then
     eval "$(gh completion -s bash)"
     
