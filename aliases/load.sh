@@ -50,7 +50,7 @@ if [[ $(command -v thefuck > /dev/null; echo $?) == 0 ]]; then
 fi
 
 if [[ $(command -v terraform > /dev/null; echo $?) == 0 ]]; then
-    eval $(terraform --alias tf)
+    alias tf=terraform
 fi
 
 if [[ $(command -v gh > /dev/null; echo $?) == 0 ]]; then
