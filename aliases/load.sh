@@ -58,10 +58,14 @@ if [[ $(command -v gh > /dev/null; echo $?) == 0 ]]; then
 fi
 
 if gh extension list | grep -q 'github/gh-copilot'; then
-    copilot_shell_suggest() { gh copilot suggest -t shell "$@" }
+    copilot_shell_suggest() { 
+        gh copilot suggest -t shell "$@" 
+    }
     alias '??'='copilot_shell_suggest'
 
-    copilot_git_suggest() { gh copilot suggest -t git "$@" }
+    copilot_git_suggest() { 
+        gh copilot suggest -t git "$@" 
+    }
     alias 'git?'='copilot_git_suggest'
 
     copilot_gh_suggest() {
