@@ -6,8 +6,6 @@
 export PATH=$PATH:~/bin
 
 source "$DOTFILES_FOLDER/aliases/load.sh"
-source "$DOTFILES_FOLDER/bash-completion/load.sh"
-source "$DOTFILES_FOLDER/bash-git-prompt/load.sh"
 
 if [[ -n $WSL_DISTRO_NAME ]]; then
     source "$DOTFILES_FOLDER/wsl/load.sh"

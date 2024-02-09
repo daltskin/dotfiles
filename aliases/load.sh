@@ -45,10 +45,6 @@ if [[ $(command -v az > /dev/null; echo $?) == 0 ]]; then
     function get-alias() { az ad user list --filter "mail eq '$1'" --query [0].userPrincipalName -o tsv; }
 fi
 
-if [[ $(command -v thefuck > /dev/null; echo $?) == 0 ]]; then
-    eval $(thefuck --alias grr)
-fi
-
 if [[ $(command -v terraform > /dev/null; echo $?) == 0 ]]; then
     alias tf=terraform
 fi
@@ -59,4 +55,17 @@ if [[ $(command -v gh > /dev/null; echo $?) == 0 ]]; then
     # Original ghrun alias
     # alias ghrun="gh run list | grep \$(git rev-parse --abbrev-ref HEAD) | cut -d$'\t' -f 8 | xargs gh run watch && notify-send 'Run finished'"
     alias ghrun="$DIR/ghrun.sh"
+fi
+
+if gh extension list | grep -q 'github/gh-copilot'; then
+    copilot_shell_suggest() { gh copilot suggest -t shell "$@" }
+    alias '??'='copilot_shell_suggest'
+
+    copilot_git_suggest() { gh copilot suggest -t git "$@" }
+    alias 'git?'='copilot_git_suggest'
+
+    copilot_gh_suggest() {
+        gh copilot suggest -t gh "$@"
+    }
+    alias 'gh?'='copilot_gh_suggest'
 fi

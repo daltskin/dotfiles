@@ -11,8 +11,6 @@ BASE_DIR=$(cd $BASE_DIR; pwd)
 
 sudo bash "$BASE_DIR/bash-completion/install.sh"
 
-bash "$BASE_DIR/bash-git-prompt/install.sh"
-
 # TODO - mostly want to set git-aliases in codespaces
 # Don't want to set on install as it breaks gitconfig integration in devcontainers
 # bash "$BASE_DIR/git-aliases.sh"
@@ -46,8 +44,8 @@ if [[ $(command -v azbrowse > /dev/null; echo $?) == 1 ]]; then
 fi
 
 if [[ $(command -v grr > /dev/null; echo $?) == 1 ]]; then
-    echo "Installing thefuck"
-    pip install thefuck
+    echo "Installing GitHub CoPilot extension""
+    gh extension install github/gh-copilot --force
 fi
 
 echo "Done"
