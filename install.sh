@@ -43,8 +43,8 @@ if [[ $(command -v azbrowse > /dev/null; echo $?) == 1 ]]; then
     rm azbrowse_linux_amd64.tar.gz
 fi
 
-if [[ $(command -v grr > /dev/null; echo $?) == 1 ]]; then
-    echo "Installing GitHub CoPilot extension""
+if [[ $(command -v gh copilot > /dev/null; echo $?) == 1 ]]; then
+    echo "Installing GitHub CoPilot extension"
     gh extension install github/gh-copilot --force
 fi
 
